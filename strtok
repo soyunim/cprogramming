@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+void mstrtok(char *str, char *strstr);
+
+int main(){
+  char str[100]={};
+  char* strstr = " ";
+  printf("문장을 입력하시오. : ");
+  scanf("%[^\n]s", str);
+  printf("<결과 확인>\n");
+  mstrtok(str, strstr);
+  printf("\n");
+
+  return 0;
+}
+
+void mstrtok(char *str, char *strstr){
+  int len = strlen(str);
+  int a, b;
+
+  for(int i=0; i<len; i++){
+    a = str[i];
+    b = *strstr;
+    if(a == b) printf("\n");
+    else printf("%c", str[i]);
+  }
+}
